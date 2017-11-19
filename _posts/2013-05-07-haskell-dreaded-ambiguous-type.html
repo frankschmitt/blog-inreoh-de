@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Haskell & the dreaded "Ambiguous type '
+date: '2013-05-07T12:26:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-05-07T12:26:09.732-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-1765302833414203576
+blogger_orig_url: http://inreoh.blogspot.com/2013/05/haskell-dreaded-ambiguous-type.html
+---
+
+Every time I come back to Haskell, I'm stumped by some mysterious error messages.<br /><br />Today it was the infamous <i>"Ambiguous type variable `a0' in the constraints"</i> for this piece of code (some tests for problem 2 of 99 Haskell problems):<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">module LastButOne_02_Test where<br /><br />import HUnit <br />import LastButOne_02<br />&nbsp; <br />lastButOne2Elements = test ["last but one for 2elems" ~: Just 1 ~=? lastButOne [1,2]]<br />lastButOneEmptyList = test ["last but one for empty list" ~: Nothing ~=? lastButOne [] ]<br />lastButOne3Elements = test ["last but one for 3elems" ~: Just 5 ~=? lastButOne [3,5,2]]<br /><br />tests = TestList [<br />&nbsp; lastButOne2Elements,<br />&nbsp; lastButOne3Elements,<br />&nbsp; lastButOneEmptyList ]<br /><br />main::IO()<br />main = (runTestTT tests) &gt;&gt;= (\x -&gt; putStrLn $ show x)</span><br /><br />The reason was the comparison between Nothing and lastButOne [], but thanks to StackOverflow and the online version of Learn You A Haskell For Great Good, I was able to figure it out.<br /><br />Apparently, the compiler is not content to compare Nothing with [a], so you have to tell it which a you want:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">lastButOneEmptyList = test ["last but one for empty list" ~: Nothing ~=? (lastButOne [] :: Maybe Int) ]</span><br />Et voilá, the compiler is happy, and therefore am I :-)

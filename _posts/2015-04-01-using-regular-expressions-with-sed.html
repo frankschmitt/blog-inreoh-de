@@ -1,0 +1,12 @@
+---
+layout: post
+title: Using regular expressions with sed (avoiding the "illegal reference \1" error)
+date: '2015-04-01T05:24:00.002-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2015-04-01T05:24:35.631-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-5264489503850315867
+blogger_orig_url: http://inreoh.blogspot.com/2015/04/using-regular-expressions-with-sed.html
+---
+
+Nothing beats sed for doing quick replacements on the command line, but if you try to naively use backreferences, e.g. <br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; sed "s/(thursday|friday)/\1 next week/"&nbsp;</span><br /><br />&nbsp;you'll get the (not very helpful) error message<br /><br /><b>illegal reference \1</b><br /><br />The solution is simple - just add the <b>-r</b> command line switch (or <b>--regexp-extended</b> if you like being verbose):<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; sed -r "s/(thursday|friday)/\1 next week/" </span>

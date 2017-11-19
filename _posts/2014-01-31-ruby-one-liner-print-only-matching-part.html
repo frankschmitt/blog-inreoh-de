@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Ruby one-liner: print only the matching part of a string'
+date: '2014-01-31T04:50:00.000-08:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2014-01-31T04:50:47.139-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-5008589007779987251
+blogger_orig_url: http://inreoh.blogspot.com/2014/01/ruby-one-liner-print-only-matching-part.html
+---
+
+Sometimes, you have to extract information from a log file or similar. This is where Ruby's command line parameters -n / -p are very convenient.<br /><br />Our example input file will look like this:<br /><br />2014-01-31 13:00:49&nbsp;&nbsp;&nbsp; "Missing author for experiment ""FS_1"", row ""176""<br />2014-01-31 14:05:51&nbsp;&nbsp;&nbsp; "Missing date for experiment ""FS_2"", row ""32""<br /><br /><br /><h3>Simple grep replacement</h3>To get only lines containing "author", you can use<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">ruby -pe 'next unless $_ =~ /author/'</span><br /><h4>Output</h4>2014-01-31 13:00:49&nbsp;&nbsp;&nbsp; "Missing author for experiment ""FS_1"", row ""176""<br /><h4>Explanation&nbsp;</h4>&nbsp;-p instructs Ruby to put your script inside "while gets; ...; print; end". You can access the current line with $_. <br /><h3>Transforming the input with regular expressions</h3>To extract the information&nbsp; for those lines where the author is missing, you can use<br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">ruby -ne 'md = /Missing author for experiment ""([^"]+)"", row ""([^"]+)""/.match($_); puts md[2] + "," + md[1] if md' input.txt</span><br /><h4>Output:</h4>176,FS_1<br /><br /><h4>Explanation</h4>&nbsp;-n instructs Ruby to put your script inside "while gets; ...; end". You can access the current line with $_. <br /><br /><h3>Links</h3><a href="http://ruby-doc.com/docs/ProgrammingRuby/">http://ruby-doc.com/docs/ProgrammingRuby/</a> Online version of the original pickaxe (for Ruby 1.6), see section "Ruby and Its World" for a list of Ruby command-line arguments<br /><br />

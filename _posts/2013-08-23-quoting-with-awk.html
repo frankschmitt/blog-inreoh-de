@@ -1,0 +1,12 @@
+---
+layout: post
+title: Quoting with awk
+date: '2013-08-23T03:24:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2014-07-15T08:21:18.052-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-8003220830306669734
+blogger_orig_url: http://inreoh.blogspot.com/2013/08/quoting-with-awk.html
+---
+
+Getting awk to print certain special characters (e.g. the single quote ') can be cumbersome. This is frustrating especially when you want to generate SQL statements, where the single quote is used as the string delimiter. <br /><br />One way to overcome this is to use escape sequences with (octal) ASCII codes:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">awk '{print "\047" $1 "\047,\047" $2 "\047";}'</span><br /><br />This will convert a list like<br /><br />Doe John<br />Mustermann Max<br /><br />into<br /><br />'Doe','John'<br />'Mustermann','Max'<br /><br /><br /><b>UPDATE</b> <br />Alternatively, you can use \x with hexadecimal ASCII codes:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">awk '{print "\x27" $1 "\x27,\x27" $2 "\x27";}'</span><br /><br />

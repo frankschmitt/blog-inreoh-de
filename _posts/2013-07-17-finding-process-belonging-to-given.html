@@ -1,0 +1,12 @@
+---
+layout: post
+title: Finding the process belonging to a given TCP/IP port
+date: '2013-07-17T06:10:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-07-17T06:10:00.046-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-4857550170001406786
+blogger_orig_url: http://inreoh.blogspot.com/2013/07/finding-process-belonging-to-given.html
+---
+
+Finding the process that listens on a given TCP/IP port isn't too hard, but of course, each O/S insists on doing it differently.<br />Some possible approaches for different operating systems (examples for local GWT server listening on port 8888): <br /><br /><b>Mac OS X</b><br />sudo lsof -i TCP:8888<br /><b><br /></b><b>Windows</b><br />netstat -ano | findstr 8888 <br /><br /><b>Linux</b><br />netstat -ano | grep 8888<br /><br />I'm sure there exist more elegant solutions, but these work for me :-)

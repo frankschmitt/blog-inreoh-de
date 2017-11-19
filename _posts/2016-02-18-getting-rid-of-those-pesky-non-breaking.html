@@ -1,0 +1,16 @@
+---
+layout: post
+title: Getting rid of those pesky non-breaking spaces (U+00A0) on MacOS X
+date: '2016-02-18T09:24:00.003-08:00'
+author: Frank Schmitt
+tags:
+- Keyboard
+- MacOSX
+- vim
+- nbsp
+modified_time: '2016-02-18T09:25:15.862-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-529530328574517332
+blogger_orig_url: http://inreoh.blogspot.com/2016/02/getting-rid-of-those-pesky-non-breaking.html
+---
+
+A problem that's been bugging me for quite some time was that for no obvious reasons, source code I entered broke on space characters. Removing the space characters and re-entering them usually fixed the problem.<br /><br />Finally, iex (the interactive Elixir shell) gave me a clue to what was really going on:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">iex(11)&gt; [ 65&nbsp;]<br />** (SyntaxError) iex:11: unexpected token: "&nbsp;" (column 5, codepoint U+00A0)</span><br /><br />DuckDuckGoing for U+00A0 quickly revealed that U+00A0 is a non-breaking space (or nbsp). To show the offender in vim, put this in your .vimrc:<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">" show those darn non-breaking spaces &nbsp; aka U+00A0<br />set list<br />set listchars=nbsp:.</span><br /><br />But to really get rid of the problem, you can just remap the combination Alt+Space (which inserts the nbsp) to a plain ol' space (shamelessly copied from <a href="http://apple.stackexchange.com/a/34673/171861">StackExchange</a>):<br />- create the directory ~/Library/KeyBindings/<br />- create a new file DefaultKeyBinding.dict in this directory<br />- add the following entry to this file:<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">{<br />&nbsp;&nbsp;&nbsp; "~ " = (insertText:, " ");<br />} </span><br /><br /><br />

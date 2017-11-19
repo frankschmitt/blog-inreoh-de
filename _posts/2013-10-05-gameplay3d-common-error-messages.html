@@ -1,0 +1,12 @@
+---
+layout: post
+title: GamePlay3D - common error messages
+date: '2013-10-05T02:36:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-10-06T08:21:59.110-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7797812290338311599
+blogger_orig_url: http://inreoh.blogspot.com/2013/10/gameplay3d-common-error-messages.html
+---
+
+Some common error messages you might encounter when developing a game with GamePlay3D, and how to solve the issues:<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--> <br /><div style="font-family: Arial;"><br /></div><h2>Attempting to set a material on node ... which has no model</h2><h3>Symptom</h3><div>After creating a new project, copying the source code from the character sample and running it, you get:</div><span arial="" font-family:="">applyNodeProperty -- Attempting to set a material on node 'boymesh', which has no model.</span>Assertion failed: (0), function applyNodeProperty, file /Users/frank/src/GamePlay/gameplay/src/SceneLoader.cpp, line 246.<br /><br /><h3>Cause</h3>Resource file is missing<br /><br /><br /><h3>Solution</h3><br />Copy the missing resource file to your project directory (I ended up copying the whole res/ folder from the example project)<br /><div style="font-family: Arial;"><br /></div><div style="font-family: Arial;"><br /></div><h2>Texture sampler ... is missing required image file path</h2><h3>Symptom</h3><div>After creating a new project and copying the source code from the longboard sample and running it, you get:</div><span style="font-family: Arial;">loadRenderState -- Texture sampler 'u_diffuseTexture' is missing required image file path.</span><br /><br style="font-family: Arial;" /><div style="font-family: Arial;">Assertion failed: (0), function loadRenderState, file /Users/frank/src/GamePlay/gameplay/src/Material.cpp, line 418.</div><div style="font-family: Arial;"><br /></div><h3>Cause</h3><div style="font-family: Arial;">game*.config files missing </div><div style="font-family: Arial;"><br /></div><h3>Solution</h3><div style="font-family: Arial;">copy the game*.config files to the app directory&nbsp;</div>

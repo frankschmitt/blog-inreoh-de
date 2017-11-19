@@ -1,0 +1,12 @@
+---
+layout: post
+title: XCode - neue Version, neue Fehlermeldungen
+date: '2010-08-08T07:28:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2010-08-08T07:31:45.953-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-1836458557758981192
+blogger_orig_url: http://inreoh.blogspot.com/2010/08/xcode-neue-version-neue-fehlermeldungen.html
+---
+
+Nachdem mein iPhone 3GS schon seit geraumer Zeit unter iOS4 läuft, war es höchste Zeit, endlich mal auf das aktuelle iPhone SDK + XCode umzusteigen. Die Installation lief problemlos, beim Compilieren gab's aber einen<br /><br />"Base SDK missing"<br /><br />Fehler. Mit ein bisschen googlen (die Ergenisse von Yahoo sind einfach qualitativ nicht so gut wie die von Google) fand ich die Lösung:<br /><br />choose Project --> Edit Project Settings. When a dialog appears,  click the Build tab and change the value in the Base SDK option.<br /><br />Funktioniert. Jetzt nur noch das Provisioning Profile erneuern, und weiter geht's :-)

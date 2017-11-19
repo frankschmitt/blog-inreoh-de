@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Getting rid of the Docker error "ConnectEx tcp: No connection could be made
+  because the target machine actively refused it.."'
+date: '2016-01-25T10:58:00.000-08:00'
+author: Frank Schmitt
+tags:
+- Windows
+- Docker
+modified_time: '2016-01-25T10:58:03.160-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-8083208907397275236
+blogger_orig_url: http://inreoh.blogspot.com/2016/01/getting-rid-of-docker-error-connectex.html
+---
+
+Out of the blue, the Docker setup on my company-provided Windows laptop stopped working; I could launch the "Docker Quickstart Terminal" just fine, but every attempt to run a docker command (e.g. "docker ps") resulted in the error message:<br /><br /><pre><code class="language-text" data-lang="text">ConnectEx tcp: No connection could be made because the target machine actively refused it..</code></pre><pre><code class="language-text" data-lang="text">&nbsp;</code></pre><code class="language-text" data-lang="text"></code>Re-installing VirtualBox and Docker didn't help - the setup worked exactly once,<br />&nbsp;but after the next reboot, the dreaded error message appeared again.<br /><pre>&nbsp;</pre>The root cause was my corporate VPN client; whenever I establish a VPN connection, the client seems to cut off all other NICs, thereby disabling connections to the DockerHost VirtualBox VM.<br /><br />So right now, I can either work offline with Docker or work online without Docker. That kind of sucks :-/ 

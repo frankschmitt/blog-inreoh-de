@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'NSInternalInconsistencyException: "Invalid update: invalid number of rows
+  in section 0"'
+date: '2014-12-21T14:34:00.000-08:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2014-12-21T14:34:11.805-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-288011901187640194
+blogger_orig_url: http://inreoh.blogspot.com/2014/12/nsinternalinconsistencyexception.html
+---
+
+After adding deletion to a UITableView in an iOS application &nbsp;(which is usually pretty straightforward), I got an&nbsp;<div><br /></div><blockquote class="tr_bq">NSInternalInconsistencyException: "Invalid update: invalid number of rows in section 1"&nbsp;</blockquote><div><br /></div><div>where the counts were somewhat strange (inserted 0, deleted 0). After disabling the deletion of the elements from the underlying array, I got&nbsp;</div><div><br /></div><div><blockquote class="tr_bq">NSInternalInconsistencyException: "Invalid update: invalid number of rows in section 0"&nbsp;</blockquote><div><br /></div><div>where the counts were what I expected (inserted 0, deleted 1). &nbsp;Turns out I had implemented&nbsp;</div></div><div><br /></div><blockquote class="tr_bq">numberOfSectionsInTableView()</blockquote><div><br /></div><div>to return 2; changing this to return 1 fixed the error.</div><div><br /></div>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Running the "League of Legends" client on Mac OS X
+date: '2015-03-14T15:55:00.002-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2015-03-14T15:56:33.283-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-994381084812333308
+blogger_orig_url: http://inreoh.blogspot.com/2015/03/running-league-of-legends-client-on-mac.html
+---
+
+My kids've been pestering me because they wanted to play "League of Legends" on my old Mac for quite some time now. So I thought "Let's download the client and run it - shouldn't take more than a few minutes".<br /><br />Boy, was I wrong.<br /><br />On startup (after completing the usual registration process), the client started downloading a whopping 2GB of data. I thought "Oookay. Apparently, they've done a major upgrade right now. So we'll download this once and then we can run it".<br /><br />Boy, was I wrong.<br /><br />After the download was finished and we restarted the client, it started downloading another 1GB. I thought "This is getting ridiculous, but what the heck. Surely, this will be the final download".<br /><br />Boy, was I wrong.<br /><br />After successfully downloading it and restarting the client, IT STARTED DOWNLOADING AGAIN. WTF?<br /><br />Now I started thinking (I know, I should have done more of that in the first place...).<br /><br />Was it possible that in 2015, a game could still require an Administrator account to run properly?<br />For testing purposes, I logged in using my own (Administrator) account, re-downloaded the installer, went through the initial 2GB download, restarted it, and lo and behold - it worked!<br /><br />But since giving the kids access to my account is a big no-go, I bit the bullet and<br />- transferred ownership of the game to them: chown -R <username> League_of_Legends.app</username><br />- told them that whenever the game tries to upgrade itself and fails, they should call me<br /><br />IMO, this is totally unacceptable. Either the people at Riot Games (the makers of League of Legends) &nbsp;are completely incompetent or just incredibly lazy. Either way, this sucks.<br /><br /><br />

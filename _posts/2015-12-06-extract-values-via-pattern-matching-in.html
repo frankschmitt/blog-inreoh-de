@@ -1,0 +1,15 @@
+---
+layout: post
+title: Extract values via pattern matching in Elm/Haskell
+date: '2015-12-06T03:14:00.003-08:00'
+author: Frank Schmitt
+tags:
+- Elm
+- PatternMatching
+- Haskell
+modified_time: '2015-12-06T03:14:45.854-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7834999438527179044
+blogger_orig_url: http://inreoh.blogspot.com/2015/12/extract-values-via-pattern-matching-in.html
+---
+
+<h2>Haskell </h2><br />Suppose you have a simple data definition for a direction and want to add a delta of type Int to it:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">data Direction = Direction Int deriving Show</span> <br />l<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">et d = Direction 7<br />&nbsp;</span><br />Obviously, this doesn't work:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">d + 5</span><br /><br />because the types are not compatible. The solution is pattern matching:<br /><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">let&nbsp;</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; (Direction value) = d</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; d + 5</span><br /><br /><br /><h2>Elm </h2><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">type Direction = Direction Int</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">update :: Direction -&gt; Int -&gt; Direction</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">update dir delta =</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; let&nbsp;</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; (Direction value) = dir</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp; in</span><br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;&nbsp;&nbsp; Direction (value + delta)</span><br /><br />

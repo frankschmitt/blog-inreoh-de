@@ -1,0 +1,13 @@
+---
+layout: post
+title: Rubyscript2Exe / Ocra + Oracle Instant Client
+date: '2010-05-04T13:00:00.000-07:00'
+author: Frank Schmitt
+tags:
+- Ruby Executable Oracle InstantClient Rubyscript2exe Ocra
+modified_time: '2010-05-04T13:05:00.741-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-3594180031332937226
+blogger_orig_url: http://inreoh.blogspot.com/2010/05/rubyscript2exe-ocra-oracle-instant.html
+---
+
+Ich benutze seit geraumer Zeit Rubyscript2exe, um aus ruby-Scripts executables zu bauen (z.B. zum Dumpen von Datenbanken beim Kunden).<br />Leider spielt rubyscript2exe mit Oracle Instant Client nicht so toll zusammen - es verpackt die oci.dll mit rein, was dazu führt, dass es beim Ausführen einen "OCI initialization error" gibt, weil die oci.dll Bibliotheken nicht findet, von denen sie abhängt.<br />Nach diversem Rumprobieren hab' ichs dann zum Laufen gekriegt, allerdings war dann ein executable 45MB gross :-(<br />Ocra scheint das Ganze anders zu handlen - es erzeugt ein lauffähiges executable, was <1MB ist. Einziger Nachteil: Es läuft nur unter Windows.

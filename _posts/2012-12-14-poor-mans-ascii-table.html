@@ -1,0 +1,13 @@
+---
+layout: post
+title: Poor man's ASCII table
+date: '2012-12-14T02:04:00.002-08:00'
+author: Frank Schmitt
+tags:
+- Ruby ASCII
+modified_time: '2013-01-04T08:38:14.863-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-9164271778011412568
+blogger_orig_url: http://inreoh.blogspot.com/2012/12/poor-mans-ascii-table.html
+---
+
+If you don't have your ASCII table at hand:<br /><br />&nbsp;(0..16).each do |i|<br />&nbsp;&nbsp; vals = (i*8 .. i*8 + 7)<br />&nbsp;&nbsp; puts (i*8).to_s + " " + vals.map {|i| i.chr}.join(" ") + "\n"<br />&nbsp;end

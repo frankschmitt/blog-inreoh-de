@@ -1,0 +1,13 @@
+---
+layout: post
+title: List comprehensions in Haskell
+date: '2012-12-03T04:00:00.000-08:00'
+author: Frank Schmitt
+tags:
+- Haskell
+modified_time: '2012-12-14T02:06:09.505-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-3696353907303278290
+blogger_orig_url: http://inreoh.blogspot.com/2012/12/list-comprehensions-in-haskell.html
+---
+
+List comprehensions in Haskell sind schon verdammt praktisch:<br /><br />[(i,j,k) |i &lt;- [1..10], j &lt;- [1..10], k &lt;- [1..10], i*i + j*j = k*k]<br />&nbsp;liefert alle Tripel a,b,c, für die<br /><br />&nbsp; a² + b² = c²<br /><br />gilt<!----->

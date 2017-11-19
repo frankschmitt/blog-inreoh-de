@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'Ruby one-liners: Textersetzung'
+date: '2010-05-12T08:10:00.000-07:00'
+author: Frank Schmitt
+tags:
+- Oracle
+- Ruby
+modified_time: '2016-02-01T04:14:02.462-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-888366006347059443
+blogger_orig_url: http://inreoh.blogspot.com/2010/05/ruby-one-liners-textersetzung.html
+---
+
+Ruby ist manchmal unglaublich praktisch:<br /><br />ruby -pi.bak -e "gsub('create or replace view', 'create or replace force view')" *.sql<br /><strike><strike></strike></strike><br /><pre><strike><strike><br /></strike></strike><span style="font-family: &quot;arial&quot;;">ersetzt "create or replace view" mit "create or replace force view" in </span><br /><span style="font-family: &quot;arial&quot;;">allen .sql-Dateien im aktuellen Verzeichnis.</span><br /><br /><span style="font-family: &quot;arial&quot;;">Wozu? Damit Oracle auch Views erstellt, deren SQL-Statement einen<br />Fehler enthält :-)</span><strike><strike><br /></strike></strike></pre>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Using SSHfs from the command line
+date: '2011-07-03T11:45:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2011-07-03T11:47:45.484-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7536999950165005952
+blogger_orig_url: http://inreoh.blogspot.com/2011/07/using-sshfs-from-command-line.html
+---
+
+Until now, I've only ever used SSHfs (SSH file system on top of MacFuse) via the GUI, but using the command line is much quicker:<br /><br /><code>sshfs user@server:/remotedirectory/ /mountpath -oping_diskarb,volname=<volume name="" for="" finder=""><br /><br /></volume></code> although I'm a little disappointed that ~ apparently doesn't work for the remote dir :-(

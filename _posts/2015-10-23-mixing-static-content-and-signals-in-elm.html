@@ -1,0 +1,13 @@
+---
+layout: post
+title: Mixing static content and signals in Elm
+date: '2015-10-23T14:49:00.004-07:00'
+author: Frank Schmitt
+tags:
+- Elm
+modified_time: '2015-10-29T00:37:41.102-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7597137549091718668
+blogger_orig_url: http://inreoh.blogspot.com/2015/10/mixing-static-content-and-signals-in-elm.html
+---
+
+Elm is awesome, but sometimes, the simplest things prove to be surprisingly challenging.<br /><br />You can easily create a HTML page showing an image:<br /><br /><blockquote class="tr_bq">import Graphics.Element exposing (..)<br /><br />main : Element<br />main = <br />&nbsp;&nbsp;&nbsp; image 200 200 ("./images/Mimas_moon.jpg")</blockquote><br />and you can just as easily create a HTML page showing the current mouse position:<br /><br /><blockquote class="tr_bq">import Mouse<br />import Signal <br />import Graphics.Element <br /><br />main =<br />&nbsp; Signal.map Graphics.Element.show Mouse.position</blockquote><br />but creating a HTML page that displays both is not as easy as you would imagine. I finally settled for<br /><br /><blockquote class="tr_bq">import Mouse<br />import Signal <br />import Graphics.Element exposing (..)<br />import Graphics.Collage exposing (..)<br />import List<br /><br />toCollage : List Form -&gt; Element<br />toCollage lst = <br />&nbsp; collage 600 400 lst<br /><br />combine : List (Signal a) -&gt; Signal (List a)<br />combine = List.foldr (Signal.map2 (::)) (Signal.constant []) </blockquote><blockquote class="tr_bq">main : Signal Element<br />main =<br />&nbsp; Signal.map toCollage<br />&nbsp;&nbsp;&nbsp;&nbsp; (combine<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ Signal.map toForm (Signal.map Graphics.Element.show Mouse.position)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; , Signal.constant(move (200,-100) (toForm (image 200 200 ("./images/Mimas_moon.jpg"))))<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ])</blockquote>This code<br />- takes the current Mouse position (which is a Signal)<br />- converts it to a Signal Form using Signal.map toForm<br />- creates and moves an image<br />- converts it to a Signal Form using Signal.constant<br />- puts these two elements into a List [ Signal Form ]<br />- uses combine to convert this List [ Signal Form ] to a Signal List [ Form ]<br />- finally uses Signal.map toCollage to create a collage out of this list<br /><br /><br /><br /><br /><br /><br /><br />

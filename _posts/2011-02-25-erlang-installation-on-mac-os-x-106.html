@@ -1,0 +1,12 @@
+---
+layout: post
+title: Erlang installation on Mac OS X 10.6
+date: '2011-02-25T13:56:00.000-08:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2011-02-25T14:01:59.291-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-242082431149839272
+blogger_orig_url: http://inreoh.blogspot.com/2011/02/erlang-installation-on-mac-os-x-106.html
+---
+
+<span style=";font-family:arial;font-size:100%;"  >Since I'm currently reading "7 languages in 7 weeks", I decided to install Erlang. Grabbed the tarball from the erlang home page, extracted it and ran configure &amp; make.<br /><br />Bang! Say hello to showstopper #1:<br /></span><pre  class="wiki" style="font-family:arial;"><span style="font-size:100%;">error: 'RTLD_NEXT' undeclared (first use in this function)<br /><br />After some googling, I renamed<br />/usr/local/include to /usr/local/include.bak,<br />and - lo and behold!<br />- the compile finished successfully.<br />Must have been an incompatible version of dlfcn.h, I guess.<br /><br /><br /></span></pre><span style=";font-family:arial;font-size:100%;"  ><br /></span>

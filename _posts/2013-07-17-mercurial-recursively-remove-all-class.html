@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Mercurial: recursively remove all class files'
+date: '2013-07-17T13:25:00.001-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-07-17T13:25:29.043-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-8546324714273903178
+blogger_orig_url: http://inreoh.blogspot.com/2013/07/mercurial-recursively-remove-all-class.html
+---
+
+Assuming you have erroneously added some .class files to your hg repo and want to get rid of them:<br /><br />&nbsp; hg rm "glob:**/*.class"<br /><br />(as always, StackOverflow provided the answer - see <a href="http://stackoverflow.com/questions/4828211/how-do-i-recursively-remove-folders-from-mercurial-tracking-system">http://stackoverflow.com/questions/4828211/how-do-i-recursively-remove-folders-from-mercurial-tracking-system</a> )

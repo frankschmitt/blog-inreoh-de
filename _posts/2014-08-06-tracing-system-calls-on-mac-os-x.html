@@ -1,0 +1,12 @@
+---
+layout: post
+title: Tracing system calls on Mac OS X
+date: '2014-08-06T13:30:00.001-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2014-08-06T13:30:41.278-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-5646577488410777251
+blogger_orig_url: http://inreoh.blogspot.com/2014/08/tracing-system-calls-on-mac-os-x.html
+---
+
+Tracing system calls on Mac OS X is incredibly simple with dtruss (which is just a shell script that wraps a fancy configuration for dtrace):<br /><br />&nbsp; <b>sudo dtruss -f ~/scratch/bla.sh</b><br /><b><br /></b>The -f instructs dtruss to also trace system calls for forked child processes (which I usually want).

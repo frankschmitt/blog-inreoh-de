@@ -1,0 +1,12 @@
+---
+layout: post
+title: Oracle JDBC + Maven - how (not) to do it
+date: '2016-07-19T13:54:00.001-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2016-07-19T13:54:35.826-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7959345083491223427
+blogger_orig_url: http://inreoh.blogspot.com/2016/07/oracle-jdbc-maven-how-not-to-do-it.html
+---
+
+<h2>Warning</h2>This post is somewhat of a rant - if you are affiliated with Oracle corp, you might want to avoid reading the rest.<br /><br /><h2>The goal</h2>I wanted to write a simple Java application that demonstrated property based testing for a PL/SQL function in an Oracle database.<br /><br /><h2>The facts, and some assumptions</h2>Oracle database is owned by Oracle corp.<br />Java is owned by Oracle corp.&nbsp;<br />Maven is the de-facto standard for building Java applications.<br /><br />Therefore, one might assume that using Maven to build a Java application that connects to an Oracle database is pretty straightforward - just include the relevant dependency in your POM. After all, it's just a JDBC client, right? <br /><br />RIGHT?<br /><br />Nope.<br /><br />Welcome to the wonderful world of Oracle, where lawyers, usage restrictions and stupid license agreements are king and developers are ... not really welcome.<br /><br />You either have to<br />- download the jar file from Oracle's website (and acknowledge that you're legally entitled to download it), register with Oracle and say yes to their proprietary license agreement<br />- install the jar file locally with maven<br /><br />or<br />- use the Oracle maven repository (which - again - requires you to register with Oracle and acknowledge their proprietary license agreement)<br />- store your username + encrypted password in a settings file<br /><br /><h2>The conclusion</h2>Never use Oracle products for hobby projects, especially not the database. It's just not worth the hassle. <br /><br /><br />

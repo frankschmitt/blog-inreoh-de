@@ -1,0 +1,13 @@
+---
+layout: post
+title: XCode command line builds
+date: '2011-04-19T12:40:00.001-07:00'
+author: Frank Schmitt
+tags:
+- XCode iPhone CommandLine Build
+modified_time: '2011-04-19T12:42:40.375-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-969729846343763697
+blogger_orig_url: http://inreoh.blogspot.com/2011/04/xcode-command-line-builds.html
+---
+
+Playing around with XCode command line builds (to verify some exported projects):<br /><br />List all available SDKs:<br /><span style="font-style: italic;">xcodebuild -project FSPasswordsafe4.xcodeproj -showsdks</span><br /><br /><br />Build for iPhone Simulator 4.3:<br /><span style="font-style: italic;">xcodebuild -project FSPasswordsafe4.xcodeproj -sdk iphonesimulator4.3 -alltargets</span>

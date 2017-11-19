@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Riak build failure: ''get-deps'' failed '
+date: '2013-08-30T05:07:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-08-30T05:23:12.590-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-7421439254775138265
+blogger_orig_url: http://inreoh.blogspot.com/2013/08/riak-build-failure-get-deps-failed.html
+---
+
+When trying to build Riak on Mac OS X, you might encounter a failure when make is trying to build the dependencies:<br /><br />ERROR: 'get-deps' failed while processing <path_to_dependency><br /></path_to_dependency><br /><br />The cause (at least for me) was that accessing github via the git:// protocol doesn't work from our corporate network.<br /><br />Workaround: build at home, where the git: protocol isn't blocked by the firewall.

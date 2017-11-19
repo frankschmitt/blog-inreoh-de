@@ -1,0 +1,12 @@
+---
+layout: post
+title: Finding files with find
+date: '2013-08-19T00:54:00.004-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2013-08-19T00:58:23.010-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-4969562564035123672
+blogger_orig_url: http://inreoh.blogspot.com/2013/08/finding-files-with-find.html
+---
+
+<b>find </b>is the Swiss Army Knife tool for quickly finding files from the command line, but its syntax is somewhat unusual. Here are some quick examples:<br /><br /><ul><li><h3><span style="font-weight: normal;">&nbsp;list all files with ls that were modified within the last 15 days:</span></h3><h3><span style="font-weight: normal;">&nbsp;<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">find ./ -type f -mtime -15 | xargs ls -l&nbsp;</span>&nbsp;</span></h3></li><li><h3><span style="font-weight: normal;">&nbsp;list all files whose name contains "test":</span></h3><h3><span style="font-weight: normal;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">&nbsp;find ./ -type f -name "*test"</span> &nbsp;&nbsp;</span></h3></li><li><h3><span style="font-weight: normal;">&nbsp;grep for OUR in all files modified within the last 15 days</span></h3><h3><span style="font-weight: normal;">&nbsp;<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">find ./ -type f -mtime -15|xargs grep OUR</span> &nbsp;&nbsp;</span></h3></li></ul>

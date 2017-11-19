@@ -1,0 +1,13 @@
+---
+layout: post
+title: NTFS and Mac OS X woes
+date: '2012-01-10T12:29:00.000-08:00'
+author: Frank Schmitt
+tags:
+- NTFS-3G MacFuse MacOSX NTFS
+modified_time: '2012-07-23T13:18:34.944-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-410589134218718450
+blogger_orig_url: http://inreoh.blogspot.com/2012/01/ntfs-and-mac-os-x-woes.html
+---
+
+Every once in a while, when trying to mount a NTFS drive on Mac OS X with NTFS-3G + MacFuse, I get an error stating "NTFS-3G could not mount - unclean shutdown".<br /><br />Contrary to the message box that pops up, mount -o force .. doesn't help; what helps is:<br /><br /><span style="font-style: italic;">sudo mkdir /Volumes/NTFS </span><br /><br /><span style="font-style: italic;">sudo </span><i class="moz-txt-slash" style="font-style: italic;"><span class="moz-txt-tag">/</span>usr/local/bin/ntfs-3g -o force /dev/rdisk2s1 /Volumes/NTFS<span class="moz-txt-tag">/</span></i><span style="font-style: italic;">   </span><br /><br />This will create a directory /Volumes/NTFS and mount the NTFS drive there (assuming /dev/rdisk2s1 is the correct device, of course).

@@ -1,0 +1,12 @@
+---
+layout: post
+title: CoreData or "never change an existing data model"
+date: '2010-08-15T13:12:00.000-07:00'
+author: Frank Schmitt
+tags: 
+modified_time: '2010-08-15T13:17:03.382-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-3882134385420257049
+blogger_orig_url: http://inreoh.blogspot.com/2010/08/coredata-or-never-change-existing-data.html
+---
+
+Ok, so sometimes I'm a little bit naive (esp. regarding SW development):<br />Added a new entity to my CoreData data model, build&amp;run - hups.<br />App crashes, the console contains<br /><br />"The model used to open the store is incompatible with the one used to create the store"<br /><br />Googling around for the error message quickly brought the sholution - delete app + data from the iPhone simulator, and re-build it. Everything is fine again :-)

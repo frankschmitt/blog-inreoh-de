@@ -1,0 +1,15 @@
+---
+layout: post
+title: Running Oracle in a Docker container on OS X
+date: '2015-12-16T14:11:00.002-08:00'
+author: Frank Schmitt
+tags:
+- Oracle
+- Docker
+- MacOSX
+modified_time: '2015-12-17T14:00:31.730-08:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-3340088174499230195
+blogger_orig_url: http://inreoh.blogspot.com/2015/12/running-oracle-in-docker-container-on.html
+---
+
+This guide provides a step-by-step introduction for getting up and running with the Oracle database in a Docker container on OS X.<br /><br /><h2>Step 1: Install Docker</h2>Grab the <a href="https://www.docker.com/docker-toolbox">Docker toolbox&nbsp;</a> and install it<br /><br /><h2>Step 2: Startup Docker</h2>Run Docker Quickstart Terminal (e.g. by searching for "Docker" in Spotlight) <br /><br /><h2>Step 3: Get the image </h2>We'll use the <a href="https://hub.docker.com/r/alexeiled/docker-oracle-xe-11g/">excellent Docker image by alexeiled</a> - it contains some modifications to make our life easier.<br /><br />Inside our Docker shell, run <br /><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><br /></span><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">docker pull alexeiled/docker-oracle-xe-11g</span><br /><br /><span style="font-family: inherit;">to get the image from DockerHub. </span><br /><br /><br /><h2>Step 4: Startup container</h2>To launch a new container from our image, run<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g</span><br /><br />You can check which containers are running with<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker ps</span><br /><br /><h2>Step 5: Connect to our Docker container via SSH</h2>There's a gotcha here: most Docker tutorials assume you're running on a Linux box, where Docker client and Docker server are the same machine. But on OS X, your Docker server is a VirtualBox VM, so none of the usual commands work without modification.<br /><br />E.g. to connect to our Docker image via SSH, we'd normally use<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ssh root@localhost -p 49160</span><br /><br />but we'll have to connect to our Docker server instead of localhost:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ssh root@192.168.99.100 -p 49160</span><br /><br />(this assumes that the Docker server uses the IP address 192.168.99.100 - when the Docker VM is starting up, it'll tell you which IP address it uses).<br /><br /><h2>Step 6: Logon to Oracle APEX</h2>Now, you can use your Oracle installation. E.g. to log on to APEX, simply open<br /><br />http://192.168.99.100:49162/apex<br /><br />in your web browser. <br /><br /><br />

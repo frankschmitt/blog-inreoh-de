@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cooking recipe for GitHub
+date: '2015-12-06T08:18:00.000-08:00'
+author: Frank Schmitt
+tags:
+- GitHub
+- git
+modified_time: '2017-05-28T05:45:15.346-07:00'
+blogger_id: tag:blogger.com,1999:blog-6373343020354235841.post-4541565906750399211
+blogger_orig_url: http://inreoh.blogspot.com/2015/12/cooking-recipe-for-simple-github-bugfix.html
+---
+
+<h2>Simple bugfix / pull request </h2>If you want to help an open source project on GitHub and have a simple bugfix that you would like to see integrated, here's the most straightforward way to do it: <br /><br />- fork the repo on GitHub<br />- clone your repo locally<br />- create a new local branch (let's call it doc-fix-1)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git branch doc-fix-1</span><br />- switch to this branch<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git checkout doc-fix-1</span><br />- change the code :-)<br />- commit it<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git commit -a -m "simple doc fix"</span><br />- push it to github, creating a new branch<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git push origin doc-fix-1</span><br />- create a pull request on GitHub<br /><br />(Just a personal note: how I wish that git would at least try to be as user-friendly as hg is...)<br /><br /><h2>Syncing a fork</h2>If you've forked a repository and want to keep it up-to-date, do this:<br /><br /><h3>Add the original repo (just once)</h3><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git remote add upstream <upstream-url><url of="" original="" repo=""></url></upstream-url></span><br /><br /><h3>Sync with original (whenever you like)</h3><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git fetch upstream</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git checkout master</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git merge upstream/master </span><br /><br />
