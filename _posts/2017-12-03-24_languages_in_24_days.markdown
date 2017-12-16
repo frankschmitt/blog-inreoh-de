@@ -1,0 +1,134 @@
+# Synopsis
+After finishing the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.
+
+# Day 1: Python
+For an easy start, I chose Python. I've done some Python programming in the past, but wouldn't consider myself a knowledgeable Python programmer.
+
+## Testing
+Pretty straightforward - install Pytest, implement tests using the usual syntax, and run 'em. 
+
+## Types + Standard Library
+Python claims it "comes with batteries included", and that's no exaggeration. You got everything you need.
+
+## Conclusions
+Python is a very nice programming language. The only reason it isn't my favourite is: I've always liked Ruby more :-)
+
+
+# Day 2: Rust
+For day 2, I chose Rust. Rust has been on my radar for quite some time, but I never got around to try it. Therefore, this was my first code ever written in Rust.
+
+## Testing
+Works as expected.
+
+## Types + Standard Library
+Everything I needed - basic types, generic containers etc.
+
+## Conclusions
+Rust is nice. The syntax is a little bit quirky, but overall, I'd recommend checking it out if you havent' already.
+
+
+# Day 3: Go
+Go seems to be one the rising stars in the programming language landscape. I had read different opinions about (from "it's so great!" to "it's so useless!", making it an ideal choice for the AoC. I never had written code in Go before.
+
+## Testing
+Bitter disappointment - apparently, Go's default testing package doesn't even provide ExpectEquals and similar. 
+The reasoning seems to be "assertions are bad, therefore we don't use them". While I get why you wouldn't want to have an assert() *macro* in your language, an assert() *test assertion* surely will hurt no one?
+Sure, I can easily roll my own, but that kind of defeats the purpose of a default package, doesn't it?
+
+## Types, Type Inference & Standard Library
+Calling Go's approach "Type Inference" is an insult to all other programming languages. Also, no tuples. 'nuff said. The standard library contains some quirks - e.g. to use the standard math, you have to convert everything to float64 and back. It would have been nice to be able to use Ceil() and get an int type instead of having to cast the float64 I get.
+
+## Formatting
+One of the few things I like about Go is that it brings its own formatting tool along and that there's zero room for configuring it. So no discussions about formatting, braces style etc. Although - why did they have to use tabs instead of spaces? 
+
+## Conclusions
+Go seems useless to me. It would have been a great language if it had been invented in the the '80s, and it would have been ok in the '90s. But in the 2010s, its lack of features is appalling (esp. compared to Rust, Crystal etc.)
+
+
+# Day 4: F#
+The first language from the ML family. I had already written some toy examples in F# before, but this was my first serious attempt at it.
+
+## Testing
+One of the main entry points for F# into mainstream land is being an ideal testing language for existing .NET code, and what can I say - that's true.
+
+## Types, Type Inference & Standard Library
+ML language = Hindley-Milner Type System = Awesomeness. Having access to all of .NET also is quite useful.
+
+## Ecosystem
+Sigh. Getting basic F# to work on Mac OS X is easy (using Homebrew and Mono), but I struggled for quite some time trying to get .NET Core to work. If you want to try this, you'll have to invest quite some time to get it working properly(unless you're a lot smarter than me). E.g. I wanted to use NUnit with F# on Mac OS X and created an issue, but none of the F# users of NUnit seems to use a Mac.
+
+## Conclusions
+I like F#, but I wouldn't use it for serious projects on Mac OS X (yet), since the ecosystem seems not yet stable enough.
+
+
+# Day 5: C++
+After three languages that were pretty new to me, it was time to get back to my roots - my first project as a professional programmer (> 15 years ago) was building a Protein-Ligand docking tool in C++.
+
+## Testing
+Haven't looked too deep into it, so I cannot really comment on it. I hand-rolled my own testing framework (just two assertion methods).
+
+## Types, Type Inference & Standard Library
+After having done some work in languages from the ML family, C++'s types seem inferior. Also, I don't like the syntax anymore, and the standard library is no exception.
+
+## Conclusions
+C++ and myself have drifted apart; for low-level programming, I'd use Rust or similar, for everything else, either a JVM-based language or a fully-fledged functional one (like Elixir, Haskell, ...).
+
+
+# Day 6: Julia
+Now for something completely different - Julia. First serious programming effort in this one.
+
+## Testing
+Veeeeery nice. Most concise way of writing tests that I've ever seen in my lifetime:
+```
+@test choose_block([0, 7, 0, 7]) == (7,2)
+```
+defines a test for the choose\_block function, asserting that the result tuple equals what you expect.
+
+## Types, Type Inference & Standard Library
+Excellent. Changing the return type from a single int to a tuple was very straightforward, the compiler is helpful, and you get the expected goodies (tuples, lists, dictionaries, ...)
+
+## Conclusions
+Love on first sight.
+
+
+# Day 7: Crystal
+Having quite some experience with Ruby (almost no Rails, however), I had heard good things about Crystal - Rubyesque syntax, type inference, compilation. An ideal choice for the AoC.
+
+## Testing
+Crystal comes with its own spec shard, which allows BDD-style tests. Nice.
+
+## Types, Type Inference & Standard Library
+Almost like Ruby, and therefore everything I need.
+
+## Conclusion
+Very nice. Ruby with a helpful compiler as a bonus = awesome.
+
+
+# Day 8: Lua
+I've tried Lua several times in the past - for some fun game programming, and as a scripting language for my PL/SQL IDE of choice (PL/SQL developer). So I had at least some idea of what was expecting me.
+
+## Testing
+LuaUnit works as expected - fine.
+
+## Types, Type Inference & Standard Library
+Whoah. Tables are mostly like dictionaries in other languages, but the standard library is lacking so much, it really hurts. No string splitting, no POSIX compatible regexes, ... I understand that this is necessary to keep the language core and interpreter small, making it an ideal choice for embedded scripting (e.g. in games), but man, this hurts.
+
+## Conclusion
+Lua is ok. But if I've got the choice, I'll use something different (Python, Ruby, ...).
+
+
+# Day 9: Haskell
+My original intention was to keep Haskell till the very end (since it's one of my favourite languages - I've been using it for Project Euler problems etc. for quite some time), but I was struggling with the other languages and wanted something nice for a change.
+
+## Testing
+Quickcheck, HUnit, ... - what else do you need for TDD happiness?
+
+## Types, Type Inference & Standard Library
+Excellent. Haskell's type system IMHO is the best one I've used so far (I've got no experience with Idris etc., though). Haskells standard library is adequate.
+
+## Conclusion
+I like Haskell a lot, although I still haven't fully grasped Monads. But for the things I use it for, it's one of the nicest languages I know.
+
+
+
+
