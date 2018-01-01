@@ -130,5 +130,12 @@ Excellent. Haskell's type system IMHO is the best one I've used so far (I've got
 I like Haskell a lot, although I still haven't fully grasped Monads. But for the things I use it for, it's one of the nicest languages I know.
 
 
+# Day 10: Clojure
 
+## IDE
+IntelliJ + Cursive was driving me nuts - trying to remove ')' simply didn't work. Finally I figured out that you can disable structural editing via
+```
+Settings→Editor→General→Smart Keys→Use structural editing
+```
+While I see how this features might appeal to a lot of people, I prefer my editor / IDE to get out of my way. And honestly - breaking the backspace / delete key is a feature that I'd consider a showstopper for myself. I'd appreciate it if the IDE simply displayed a warning "unmatched parentheses" and let me go ahead.
 
