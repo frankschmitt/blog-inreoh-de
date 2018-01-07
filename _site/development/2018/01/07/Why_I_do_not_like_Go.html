@@ -1,0 +1,44 @@
+<h1 id="synopsis">Synopsis</h1>
+<p>I’ve recently played a little bit with Go (solved one of the Advent of Code puzzles in it - another Blog post with details regarding that will follow soon), and overall, I don’t like it. I don’t like its attitude, and I don’t like the lack of convenience features I expect from newly designed languages nowadays.</p>
+
+<h1 id="detailed-rant">Detailed Rant</h1>
+
+<h2 id="naming">Naming</h2>
+<p>Choosing Go as the name of a new programming language was incredibly stupid (since Go the board game has been around for thousands of years). Searching for “Go tutorial” can therefore never be unambiguous - either you want an explanation of the board game, or you want one for the programming language. But apparently, Google’s arrogance let them assume that they don’t have to respect anybody else.</p>
+
+<h2 id="testing">Testing</h2>
+<p>Taken from https://golang.org/doc/code.html#Testing (official Go documentation):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    got := Reverse(c.in)
+    if got != c.want {
+      t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
+    }
+</code></pre></div></div>
+
+<p>Seriously? You recommend I <em>manually compose my assertion and error message</em> when I want to write a trivial unit test?</p>
+
+<p>What was so wrong about</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  AssertEquals(Reverse(c.in), c.want, "Reverse does not work as expected")
+</code></pre></div></div>
+
+<p>This is simply brain-dead.</p>
+
+<h2 id="attitude-of-the-go-core-team">Attitude of the Go core team</h2>
+<p>At first, I thought “Ok, Go is still young, and they made some mistakes that they will certainly fix in future releases”. But then, I read this:</p>
+
+<p>“There are many things in the Go language and libraries that differ from modern practices, simply because we feel it’s sometimes worth trying a different approach. https://golang.org/doc/faq#assertions
+“</p>
+
+<p>Translation: “We do it differently because we are Google and therefore know better than everybody else on the planet. We ignore important research and knowledge obtained by others because we massively suffer from the NIH syndrome.”</p>
+
+<h2 id="attitude-of-go-users">Attitude of Go users</h2>
+<p>The final straw was the attitude that several Go users showed on StackOverflow, e.g.</p>
+
+<p>“It’s not the Go way” https://stackoverflow.com/a/18638071/610979</p>
+
+<p>It might not be the Go way, but it’s the <em>sensible, industry proven</em> way.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>Goodbye, Go.</p>
+

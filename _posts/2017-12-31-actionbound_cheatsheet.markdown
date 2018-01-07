@@ -1,3 +1,9 @@
+---
+title: 'Actionbound cheatsheet' 
+categories: 
+tags: actionbound cheatsheet
+---
+
 # QR Codes
 - generate them on the ActionBound website
 - export them as PNG

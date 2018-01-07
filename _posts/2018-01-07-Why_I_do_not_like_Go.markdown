@@ -1,3 +1,9 @@
+---
+title: 'Why I do not like Go'
+categories: development
+tags: code development Go programming
+---
+
 # Synopsis
 I've recently played a little bit with Go (solved one of the Advent of Code puzzles in it - another Blog post with details regarding that will follow soon), and overall, I don't like it. I don't like its attitude, and I don't like the lack of convenience features I expect from newly designed languages nowadays.
 
@@ -22,6 +28,7 @@ What was so wrong about
 
 ```
   AssertEquals(Reverse(c.in), c.want, "Reverse does not work as expected")
+```
 
 This is simply brain-dead.
 

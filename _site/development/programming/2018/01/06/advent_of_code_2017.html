@@ -1,0 +1,169 @@
+<h1 id="synopsis">Synopsis</h1>
+<p>After finishing the first half of the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.</p>
+
+<h1 id="day-1-python">Day 1: Python</h1>
+<p>For an easy start, I chose Python. I’ve done some Python programming in the past, but wouldn’t consider myself a knowledgeable Python programmer.</p>
+
+<h2 id="testing">Testing</h2>
+<p>Pretty straightforward - install Pytest, implement tests using the usual syntax, and run ‘em.</p>
+
+<h2 id="types--standard-library">Types + Standard Library</h2>
+<p>Python claims it “comes with batteries included”, and that’s no exaggeration. You got everything you need.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>Python is a very nice programming language. The only reason it isn’t my favourite is: I’ve always liked Ruby more :-)</p>
+
+<h1 id="day-2-rust">Day 2: Rust</h1>
+<p>For day 2, I chose Rust. Rust has been on my radar for quite some time, but I never got around to try it. Therefore, this was my first code ever written in Rust.</p>
+
+<h2 id="testing-1">Testing</h2>
+<p>Works as expected.</p>
+
+<h2 id="types--standard-library-1">Types + Standard Library</h2>
+<p>Everything I needed - basic types, generic containers etc.</p>
+
+<h2 id="conclusions-1">Conclusions</h2>
+<p>Rust is nice. The syntax is a little bit quirky, but overall, I’d recommend checking it out if you haven’t already.</p>
+
+<h1 id="day-3-go">Day 3: Go</h1>
+<p>Go seems to be one the rising stars in the programming language landscape. I had read different opinions about (from “it’s so great!” to “it’s so useless!”), making it an ideal choice for the AoC. I never had written code in Go before.</p>
+
+<h2 id="testing-2">Testing</h2>
+<p>Bitter disappointment - apparently, Go’s default testing package doesn’t even provide ExpectEquals and similar. 
+The reasoning seems to be “assertions are bad, therefore we don’t use them”. While I get why you wouldn’t want to have an assert() <em>macro</em> in your language, an assert() <em>test assertion</em> surely will hurt no one?
+Sure, I can easily roll my own, but that kind of defeats the purpose of a default package, doesn’t it?</p>
+
+<h2 id="types-type-inference--standard-library">Types, Type Inference &amp; Standard Library</h2>
+<p>Calling Go’s approach “Type Inference” is an insult to all other programming languages. Also, no tuples. ‘nuff said. The standard library contains some quirks - e.g. to use the standard math, you have to convert everything to float64 and back. It would have been nice to be able to use Ceil() and get an int type instead of having to cast the float64 I get.</p>
+
+<h2 id="formatting">Formatting</h2>
+<p>One of the few things I like about Go is that it brings its own formatting tool along and that there’s zero room for configuring it. So no discussions about formatting, braces style etc. Although - why did they have to use tabs instead of spaces?</p>
+
+<h2 id="conclusions-2">Conclusions</h2>
+<p>Go seems useless to me. It would have been a great language if it had been invented in the the ’80s, and it would have been ok in the ’90s. But in the 2010s, its lack of features is appalling (esp. compared to Rust, Crystal etc.)</p>
+
+<h1 id="day-4-f">Day 4: F#</h1>
+<p>The first language from the ML family. I had already written some toy examples in F# before, but this was my first serious attempt at it.</p>
+
+<h2 id="testing-3">Testing</h2>
+<p>One of the main entry points for F# into mainstream land is being an ideal testing language for existing .NET code, and what can I say - that’s true.</p>
+
+<h2 id="types-type-inference--standard-library-1">Types, Type Inference &amp; Standard Library</h2>
+<p>ML language = Hindley-Milner Type System = Awesomeness. Having access to all of .NET also is quite useful.</p>
+
+<h2 id="ecosystem">Ecosystem</h2>
+<p>Sigh. Getting basic F# to work on Mac OS X is easy (using Homebrew and Mono), but I struggled for quite some time trying to get .NET Core to work. If you want to try this, you’ll have to invest quite some time to get it working properly(unless you’re a lot smarter than me). E.g. I wanted to use NUnit with F# on Mac OS X and created an issue, but none of the F# users of NUnit seems to use a Mac.</p>
+
+<h2 id="conclusions-3">Conclusions</h2>
+<p>I like F#, but I wouldn’t use it for serious projects on Mac OS X (yet), since the ecosystem seems not yet stable enough.</p>
+
+<h1 id="day-5-c">Day 5: C++</h1>
+<p>After three languages that were pretty new to me, it was time to get back to my roots - my first project in my first full-time job as a professional programmer (&gt; 15 years ago) was building a Protein-Ligand docking tool in C++.</p>
+
+<h2 id="testing-4">Testing</h2>
+<p>Haven’t looked too deep into it, so I cannot really comment on it. I hand-rolled my own testing framework (just two assertion methods).</p>
+
+<h2 id="types-type-inference--standard-library-2">Types, Type Inference &amp; Standard Library</h2>
+<p>After having done some work in languages from the ML family, C++’s types seem inferior. Also, I don’t like the syntax anymore, and the standard library is no exception.</p>
+
+<h2 id="conclusions-4">Conclusions</h2>
+<p>C++ and myself have drifted apart; for low-level programming, I’d use Rust or similar, for everything else, either a JVM-based language or a fully-fledged functional one (like Elixir, Haskell, …).</p>
+
+<h1 id="day-6-julia">Day 6: Julia</h1>
+<p>Now for something completely different - Julia. First serious programming effort in this one.</p>
+
+<h2 id="testing-5">Testing</h2>
+<p>Veeeeery nice. Most concise way of writing tests that I’ve ever seen in my lifetime:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@test choose_block([0, 7, 0, 7]) == (7,2)
+</code></pre></div></div>
+<p>defines a test for the choose_block function, asserting that the result tuple equals what you expect.</p>
+
+<h2 id="types-type-inference--standard-library-3">Types, Type Inference &amp; Standard Library</h2>
+<p>Excellent. Changing the return type from a single int to a tuple was very straightforward, the compiler is helpful, and you get the expected goodies (tuples, lists, dictionaries, …)</p>
+
+<h2 id="conclusions-5">Conclusions</h2>
+<p>Love on first sight.</p>
+
+<h1 id="day-7-crystal">Day 7: Crystal</h1>
+<p>Having quite some experience with Ruby (almost no Rails, however), I had heard good things about Crystal - Rubyesque syntax, type inference, compilation. An ideal choice for the AoC.</p>
+
+<h2 id="testing-6">Testing</h2>
+<p>Crystal comes with its own spec shard, which allows BDD-style tests. Nice.</p>
+
+<h2 id="types-type-inference--standard-library-4">Types, Type Inference &amp; Standard Library</h2>
+<p>Almost like Ruby, and therefore everything I need.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Very nice. Ruby with a helpful compiler as a bonus = awesome.</p>
+
+<h1 id="day-8-lua">Day 8: Lua</h1>
+<p>I’ve tried Lua several times in the past - for some fun game programming, and as a scripting language for my PL/SQL IDE of choice (PL/SQL developer). So I had at least some idea of what was expecting me.</p>
+
+<h2 id="testing-7">Testing</h2>
+<p>LuaUnit works as expected - fine.</p>
+
+<h2 id="types-type-inference--standard-library-5">Types, Type Inference &amp; Standard Library</h2>
+<p>Whoah. Tables are mostly like dictionaries in other languages, but the standard library is lacking so much, it really hurts. No string splitting, no POSIX compatible regexes, … I understand that this is necessary to keep the language core and interpreter small, making it an ideal choice for embedded scripting (e.g. in games), but man, this hurts.</p>
+
+<h2 id="conclusion-1">Conclusion</h2>
+<p>Lua is ok. But if I’ve got the choice, I’ll use something different (Python, Ruby, …).</p>
+
+<h1 id="day-9-haskell">Day 9: Haskell</h1>
+<p>My original intention was to keep Haskell till the very end (since it’s one of my favourite languages - I’ve been using it for Project Euler problems etc. for quite some time), but I was struggling with the other languages and wanted something nice for a change.</p>
+
+<h2 id="testing-8">Testing</h2>
+<p>Quickcheck, HUnit, … - what else do you need for TDD happiness?</p>
+
+<h2 id="types-type-inference--standard-library-6">Types, Type Inference &amp; Standard Library</h2>
+<p>Excellent. Haskell’s type system IMHO is the best one I’ve used so far (I’ve got no experience with Idris etc., though). Haskells standard library is adequate.</p>
+
+<h2 id="conclusion-2">Conclusion</h2>
+<p>I like Haskell a lot, although I still haven’t fully grasped Monads. But for the things I use it for, it’s one of the nicest languages I know.</p>
+
+<h1 id="day-10-clojure">Day 10: Clojure</h1>
+
+<h2 id="ide">IDE</h2>
+<p>IntelliJ + Cursive was driving me nuts - trying to remove ‘)’ simply didn’t work. Finally I figured out that you can disable structural editing via</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Settings→Editor→General→Smart Keys→Use structural editing
+</code></pre></div></div>
+<p>While I understand how this features might appeal to a lot of people, I prefer my editor / IDE to get out of my way. And honestly - breaking the backspace / delete key is a feature that I’d consider a showstopper for myself. I’d appreciate it if the IDE simply displayed a warning “unmatched parentheses” and let me go ahead.</p>
+
+<h2 id="woes">Woes</h2>
+<p>Clojure is JVM-based, and while this is certainly an advantage when accessing Java libraries etc., it causes several problems:</p>
+<ul>
+  <li>JVM stack traces (ugly as hell and mostly useless - IntelliJ makes them bearable, but e.g. running lein test can literally dump hundreds of lines on you instead of
+ simply saying (expected: x, got: y)</li>
+  <li>java.lang.NullPointerException at runtime (Billion Dollar Mistake, anyone?)</li>
+</ul>
+
+<h2 id="conclusion-3">Conclusion</h2>
+<p>Clojure <em>as a language</em> is pretty nice. But simple arity / type errors that are caught by the compiler and result in clear <em>understandable</em> error messages in other languages are much more difficult to grok in Clojure because they just dump a JVM stack trace on you and leave you on your own. There are are existing solutions for this problem (wrapping the JVM stack trace and extracting the meaningful bits) - however, at least in this regard, Clojure seems to be not very beginner-friendly.</p>
+
+<h1 id="day-11-perl6">Day 11: Perl6</h1>
+<p>Back to the roots - my first professional programming gig was implementing a CGI-based webapp in Perl (about 20 years ago :O ).
+Perl6 has a lot of differences from Perl5 - I struggled a bit with these, but overall, Perl6 is much nicer than Perl5 was.</p>
+
+<h2 id="testing-9">Testing</h2>
+<p>The built-in testing library is ok; the syntax is nice and concise. I consider the requirement to explicitly mention the number of tests that I want to run in the
+test file pretty strange, though.</p>
+
+<h2 id="types-type-inference--standard-library-7">Types, Type Inference &amp; Standard Library</h2>
+<p>Type Inference doesn’t really count for a dynamically typed language like Perl6. The standard library has everything I’ve needed, although I found the subtle differences between Hash, Bag, HashBag etc. quite confusing.</p>
+
+<h2 id="documentation">Documentation</h2>
+<p>Although extensive, I don’t like the docs for Perl6 very much - no examples, lots of abstract syntax explanations. Too much theory, and not enough practical advice IMHO.</p>
+
+<h2 id="conclusion-4">Conclusion</h2>
+<p>Perl6 is ok - if I hadn’t been spoiled by Ruby and Python, I would seriously consider adopting it as my scripting language of choice.</p>
+
+<h1 id="day-12-ruby">Day 12: Ruby</h1>
+<p>Time to go back to a well-known language. I’ve been dabbling in Ruby for &gt; 10 years (bought a copy of the original pickaxe way back), and I still like it a lot.</p>
+
+<h2 id="testing-10">Testing</h2>
+<p>RSpec always has been one of my favourite testing / spec frameworks - although Cucumber is pretty nice, too.</p>
+
+<h2 id="types-type-inference--standard-library-8">Types, Type Inference &amp; Standard Library</h2>
+<p>Type Inference doesn’t really count for a dynamically typed language like Ruby. The standard library has everything I’ve ever needed.</p>
+
+<h2 id="conclusion-5">Conclusion</h2>
+<p>Ruby claims to be “A programmer’s best friend”, and rightly so. It still is the language I feel most comfortable in.</p>

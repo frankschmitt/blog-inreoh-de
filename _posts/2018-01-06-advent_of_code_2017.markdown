@@ -1,5 +1,11 @@
+---
+title: 'Advent of Code 2017: 24 languages in 24 days'
+categories: development programming
+tags: code development programming Python Ruby C++ Lua Perl 
+---
+
 # Synopsis
-After finishing the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.
+After finishing the first half of the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.
 
 # Day 1: Python
 For an easy start, I chose Python. I've done some Python programming in the past, but wouldn't consider myself a knowledgeable Python programmer.
@@ -24,11 +30,11 @@ Works as expected.
 Everything I needed - basic types, generic containers etc.
 
 ## Conclusions
-Rust is nice. The syntax is a little bit quirky, but overall, I'd recommend checking it out if you havent' already.
+Rust is nice. The syntax is a little bit quirky, but overall, I'd recommend checking it out if you haven't already.
 
 
 # Day 3: Go
-Go seems to be one the rising stars in the programming language landscape. I had read different opinions about (from "it's so great!" to "it's so useless!", making it an ideal choice for the AoC. I never had written code in Go before.
+Go seems to be one the rising stars in the programming language landscape. I had read different opinions about (from "it's so great!" to "it's so useless!"), making it an ideal choice for the AoC. I never had written code in Go before.
 
 ## Testing
 Bitter disappointment - apparently, Go's default testing package doesn't even provide ExpectEquals and similar. 
@@ -45,7 +51,7 @@ One of the few things I like about Go is that it brings its own formatting tool 
 Go seems useless to me. It would have been a great language if it had been invented in the the '80s, and it would have been ok in the '90s. But in the 2010s, its lack of features is appalling (esp. compared to Rust, Crystal etc.)
 
 
-# Day 4: F#
+# Day 4: F\#
 The first language from the ML family. I had already written some toy examples in F# before, but this was my first serious attempt at it.
 
 ## Testing
@@ -62,7 +68,7 @@ I like F#, but I wouldn't use it for serious projects on Mac OS X (yet), since t
 
 
 # Day 5: C++
-After three languages that were pretty new to me, it was time to get back to my roots - my first project as a professional programmer (> 15 years ago) was building a Protein-Ligand docking tool in C++.
+After three languages that were pretty new to me, it was time to get back to my roots - my first project in my first full-time job as a professional programmer (> 15 years ago) was building a Protein-Ligand docking tool in C++.
 
 ## Testing
 Haven't looked too deep into it, so I cannot really comment on it. I hand-rolled my own testing framework (just two assertion methods).
