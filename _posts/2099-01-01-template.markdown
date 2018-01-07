@@ -1,0 +1,11 @@
+---
+title: 'Template'
+layout: post
+published: false
+categories: jekyll template
+tags: jekyll template
+---
+
+# Synopsis
+Unpublished template page; if you want to view this, run jekyll serve --unpublished
+

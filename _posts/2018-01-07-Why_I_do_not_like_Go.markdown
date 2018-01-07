@@ -1,6 +1,7 @@
 ---
 title: 'Why I do not like Go'
-categories: development
+layout: post
+categories: development rant
 tags: code development Go programming
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: 'Advent of Code 2017: 24 languages in 24 days'
+layout: post
 categories: development programming
 tags: code development programming Python Ruby C++ Lua Perl 
 ---

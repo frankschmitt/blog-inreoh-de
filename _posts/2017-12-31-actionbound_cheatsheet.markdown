@@ -1,5 +1,6 @@
 ---
 title: 'Actionbound cheatsheet' 
+layout: post
 categories: 
 tags: actionbound cheatsheet
 ---
