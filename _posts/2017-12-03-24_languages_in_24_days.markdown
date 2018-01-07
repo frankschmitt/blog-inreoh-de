@@ -137,5 +137,43 @@ IntelliJ + Cursive was driving me nuts - trying to remove ')' simply didn't work
 ```
 Settings→Editor→General→Smart Keys→Use structural editing
 ```
-While I see how this features might appeal to a lot of people, I prefer my editor / IDE to get out of my way. And honestly - breaking the backspace / delete key is a feature that I'd consider a showstopper for myself. I'd appreciate it if the IDE simply displayed a warning "unmatched parentheses" and let me go ahead.
+While I understand how this features might appeal to a lot of people, I prefer my editor / IDE to get out of my way. And honestly - breaking the backspace / delete key is a feature that I'd consider a showstopper for myself. I'd appreciate it if the IDE simply displayed a warning "unmatched parentheses" and let me go ahead.
 
+## Woes
+Clojure is JVM-based, and while this is certainly an advantage when accessing Java libraries etc., it causes several problems:
+ - JVM stack traces (ugly as hell and mostly useless - IntelliJ makes them bearable, but e.g. running lein test can literally dump hundreds of lines on you instead of
+    simply saying (expected: x, got: y)
+ - java.lang.NullPointerException at runtime (Billion Dollar Mistake, anyone?)
+
+## Conclusion
+Clojure *as a language* is pretty nice. But simple arity / type errors that are caught by the compiler and result in clear *understandable* error messages in other languages are much more difficult to grok in Clojure because they just dump a JVM stack trace on you and leave you on your own. There are are existing solutions for this problem (wrapping the JVM stack trace and extracting the meaningful bits) - however, at least in this regard, Clojure seems to be not very beginner-friendly. 
+
+# Day 11: Perl6
+Back to the roots - my first professional programming gig was implementing a CGI-based webapp in Perl (about 20 years ago :O ).
+Perl6 has a lot of differences from Perl5 - I struggled a bit with these, but overall, Perl6 is much nicer than Perl5 was.
+
+## Testing
+The built-in testing library is ok; the syntax is nice and concise. I consider the requirement to explicitly mention the number of tests that I want to run in the
+test file pretty strange, though.
+
+## Types, Type Inference & Standard Library
+Type Inference doesn't really count for a dynamically typed language like Perl6. The standard library has everything I've needed, although I found the subtle differences between Hash, Bag, HashBag etc. quite confusing.
+
+## Documentation
+Although extensive, I don't like the docs for Perl6 very much - no examples, lots of abstract syntax explanations. Too much theory, and not enough practical advice IMHO.
+
+## Conclusion
+Perl6 is ok - if I hadn't been spoiled by Ruby and Python, I would seriously consider adopting it as my scripting language of choice.
+
+
+# Day 12: Ruby
+Time to go back to a well-known language. I've been dabbling in Ruby for > 10 years (bought a copy of the original pickaxe way back), and I still like it a lot.
+
+## Testing
+RSpec always has been one of my favourite testing / spec frameworks - although Cucumber is pretty nice, too.
+
+## Types, Type Inference & Standard Library
+Type Inference doesn't really count for a dynamically typed language like Ruby. The standard library has everything I've ever needed.
+
+## Conclusion
+Ruby claims to be "A programmer's best friend", and rightly so. It still is the language I feel most comfortable in.
