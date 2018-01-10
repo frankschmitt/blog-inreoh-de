@@ -5,6 +5,10 @@ categories: development rant
 tags: code development Go programming
 ---
 
+** Update 2018-01-09 **
+Since @inge4pres pointed out on Twitter that this post is merely a rant without any hard facts, I posted an updated version of this - 
+see 2018-01-09 'Why I do not like Go, revisited'
+
 # Synopsis
 I've recently played a little bit with Go (solved one of the Advent of Code puzzles in it - another Blog post with details regarding that will follow soon), and overall, I don't like it. I don't like its attitude, and I don't like the lack of convenience features I expect from newly designed languages nowadays.
 
