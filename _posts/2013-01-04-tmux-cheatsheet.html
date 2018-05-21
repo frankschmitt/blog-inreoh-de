@@ -10,3 +10,6 @@ blogger_orig_url: http://inreoh.blogspot.com/2013/01/tmux-cheatsheet.html
 ---
 
 tmux is a kind of terminal multiplexer - similar to GNU screen, but with additional features.  <h3>Command-line parameters</h3>&nbsp;new -s <name> create a new session with name <name></name></name><br /><br /><h3>Examples </h3><table border="1"><tr><td>tmux ls</td><td>List running sessions</td></tr><tr><td> tmux new -s vim</td><td>Start a new session named "vim"</td></tr></table> <h3>Keyboard Shortcuts </h3><table border="1"><tr><td>Ctrl+b</td><td>Prefix</td></tr><tr><td>Prefix c </td><td>Create window </td></tr><tr><td>Prefix , </td><td>Rename window </td></tr><tr><td>Prefix n </td> <td> Next window</td></tr><tr><td>Prefix p</td><td>Previous window</td></tr><tr><td>Prefix &lt;n&gt;</td><td>Window #n (n between 0 and 9) </td></tr><tr><td>Prefix f</td><td>Find window by name </td></tr><tr><td>Prefix w</td><td>Window list </td></tr><tr><td>Prefix %</td><td>Split pane vertically</td></tr><tr><td>Prefix "</td><td>Split pane horizontally</td></tr><tr><td>Prefix o</td><td>Cycle through panes </td></tr><tr><td>Prefix up/down/left/right</td><td>Move around panes </td></tr></table>
+
+== Copy/paste
+use ```<prefix> + z``` to toggle fullscreen mode for the pane; then, you can use mouse selection as usual.
