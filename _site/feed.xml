@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-24T20:33:38+02:00</updated><id>http://localhost:4000/</id><title type="html">Inreoh’s Random Rambles</title><subtitle>Random ramblings about programming, tech, cooking and whatever else happens to interest me.</subtitle><entry><title type="html">Why I do not like Go - revisited</title><link href="http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited.html" rel="alternate" type="text/html" title="Why I do not like Go - revisited" /><published>2018-01-10T00:00:00+01:00</published><updated>2018-01-10T00:00:00+01:00</updated><id>http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited</id><content type="html" xml:base="http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited.html">&lt;h1 id=&quot;synopsis&quot;&gt;Synopsis&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-10T20:02:44+01:00</updated><id>http://localhost:4000/</id><title type="html">Inreoh’s Random Rambles</title><subtitle>Random ramblings about programming, tech, cooking and whatever else happens to interest me.</subtitle><entry><title type="html">Why I do not like Go - revisited</title><link href="http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited.html" rel="alternate" type="text/html" title="Why I do not like Go - revisited" /><published>2018-01-10T00:00:00+01:00</published><updated>2018-01-10T00:00:00+01:00</updated><id>http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited</id><content type="html" xml:base="http://localhost:4000/development/rant/2018/01/10/Why_I_do_not_like_Go_revisited.html">&lt;h1 id=&quot;synopsis&quot;&gt;Synopsis&lt;/h1&gt;
 &lt;p&gt;I’ve recently played a little bit with Go (solved one of the Advent of Code puzzles in it - another Blog post with details regarding that will follow soon), and overall, I don’t like it. I don’t like its attitude, and I don’t like the lack of convenience features I expect from newly designed languages nowadays.&lt;/p&gt;
 
 &lt;p&gt;This is an updated version written because @inge4pres pointed out on Twitter that the original version of this post was merely a rant without any hard facts.&lt;/p&gt;
@@ -246,7 +246,6 @@ Sure, I can easily roll my own, but that kind of defeats the purpose of a defaul
 &lt;p&gt;I like Haskell a lot, although I still haven’t fully grasped Monads. But for the things I use it for, it’s one of the nicest languages I know.&lt;/p&gt;
 
 &lt;h1 id=&quot;day-10-clojure&quot;&gt;Day 10: Clojure&lt;/h1&gt;
-&lt;p&gt;Finally, we’ve arrived in the Land of Lisp.&lt;/p&gt;
 
 &lt;h2 id=&quot;ide&quot;&gt;IDE&lt;/h2&gt;
 &lt;p&gt;IntelliJ + Cursive was driving me nuts - trying to remove ‘)’ simply didn’t work. Finally I figured out that you can disable structural editing via&lt;/p&gt;
@@ -292,63 +291,7 @@ test file pretty strange, though.&lt;/p&gt;
 &lt;p&gt;Type Inference doesn’t really count for a dynamically typed language like Ruby. The standard library has everything I’ve ever needed.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion-5&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Ruby claims to be “A programmer’s best friend”, and rightly so. It still is the language I feel most comfortable in.&lt;/p&gt;
-
-&lt;h1 id=&quot;day-13-kotlin&quot;&gt;Day 13: Kotlin&lt;/h1&gt;
-&lt;p&gt;Kotlin is like Java, only more concise, functional and without most of the quirks.&lt;/p&gt;
-
-&lt;h2 id=&quot;testing-11&quot;&gt;Testing&lt;/h2&gt;
-&lt;p&gt;Very good. You can either use the full power of JUnit (or any other JVM testing framework) or use one of the newer Kotlin-based ones.&lt;/p&gt;
-
-&lt;h2 id=&quot;types-type-inference--standard-library-9&quot;&gt;Types, Type Inference &amp;amp; Standard Library&lt;/h2&gt;
-&lt;p&gt;Kotlin’s type system and its type inference are quite good. The standard library has everything I needed, and you can always
-fall back on Java.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion-6&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Very nice. My new favourite JVM language.&lt;/p&gt;
-
-&lt;h1 id=&quot;day-14-java&quot;&gt;Day 14: Java&lt;/h1&gt;
-&lt;p&gt;I don’t think Java needs an introduction. Personal opinion: it’s ok-ish, but I never understood why people like it so much.&lt;/p&gt;
-
-&lt;h2 id=&quot;testing-12&quot;&gt;Testing&lt;/h2&gt;
-&lt;p&gt;Very good. There’s an abundance of testing / mocking / … frameworks to choose from.&lt;/p&gt;
-
-&lt;h2 id=&quot;types-type-inference--standard-library-10&quot;&gt;Types, Type Inference &amp;amp; Standard Library&lt;/h2&gt;
-&lt;p&gt;Sigh. Java8 introduced a lot of functional concepts, but like so many things about Java (checked exceptions &lt;em&gt;shuddder&lt;/em&gt;), using it in practice is quite cumbersome. Want an example?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;reduce has type Container&lt;T&gt; -&amp;gt; T. Therefore, it doesn't allow you to reduce from Container&lt;T&gt; -&amp;gt; U unless you also provide a so-called combiner. That's an unnecessary restriction.&lt;/T&gt;&lt;/T&gt;&lt;/li&gt;
-  &lt;li&gt;TODO: the Java compiler apparently doesn’t handle exception specifications correctly for map with a local function correctly&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusion-7&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;I really like the JVM (apart from its stacktraces). The Java language is a solid workhorse, but no more than that. There are better alternatives (e.g. Kotlin), but there are also worse ones.&lt;/p&gt;
-
-&lt;h1 id=&quot;day-15-javascript&quot;&gt;Day 15: Javascript&lt;/h1&gt;
-&lt;p&gt;And now, for something completely different, I give you - Javascript!&lt;/p&gt;
-
-&lt;h2 id=&quot;testing-13&quot;&gt;Testing&lt;/h2&gt;
-&lt;p&gt;Quite good (although I hand-rolled my own minimalist framework, since I didn’t have Internet access at the time I was solving this puzzle).&lt;/p&gt;
-
-&lt;h2 id=&quot;types-type-inference--standard-library-11&quot;&gt;Types, Type Inference &amp;amp; Standard Library&lt;/h2&gt;
-&lt;p&gt;Type system? Urks. Type inference? Irrelevant for a dynamic language. Standard Library? Ok-ish.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion-8&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;I don’t like Javascript too much. Whenever possible, I prefer Elm or any other functional language that compiles to Javascript.&lt;/p&gt;
-
-&lt;h1 id=&quot;day-16-ocaml&quot;&gt;Day 16: OCaml&lt;/h1&gt;
-&lt;p&gt;Another statically compiled functional language. A couple of years ago, I read (part of) “Real World OCaml” and did some of the exercises, but found
-Haskell more interesting.&lt;/p&gt;
-
-&lt;h2 id=&quot;testing-14&quot;&gt;Testing&lt;/h2&gt;
-&lt;p&gt;OUnit is ok - not spectacular, but not bad, either. Haven’t really looked for alternatives.&lt;/p&gt;
-
-&lt;h2 id=&quot;types-type-inference--standard-library-12&quot;&gt;Types, Type Inference &amp;amp; Standard Library&lt;/h2&gt;
-&lt;p&gt;The type inference of OCaml is pretty darn good (IME, Haskell is still better, though). The standard library is somewhat lacking, but 
-the Core libraries (which seem to be quasi-standard) fill the gaps quite nicely.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion-9&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Very nice. While Haskell’s 100% purity really shines, OCaml is more approachable since you can just throw in a print in a let expression
-for debugging purposes without having the compiler shout at you ;-)&lt;/p&gt;</content><author><name></name></author><category term="code" /><category term="development" /><category term="programming" /><category term="Python" /><category term="Ruby" /><category term="C++" /><category term="Lua" /><category term="Perl" /><summary type="html">Synopsis After finishing the first half of the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.</summary></entry><entry><title type="html">Actionbound cheatsheet</title><link href="http://localhost:4000/2017/12/31/actionbound_cheatsheet.html" rel="alternate" type="text/html" title="Actionbound cheatsheet" /><published>2017-12-31T00:00:00+01:00</published><updated>2017-12-31T00:00:00+01:00</updated><id>http://localhost:4000/2017/12/31/actionbound_cheatsheet</id><content type="html" xml:base="http://localhost:4000/2017/12/31/actionbound_cheatsheet.html">&lt;h1 id=&quot;qr-codes&quot;&gt;QR Codes&lt;/h1&gt;
+&lt;p&gt;Ruby claims to be “A programmer’s best friend”, and rightly so. It still is the language I feel most comfortable in.&lt;/p&gt;</content><author><name></name></author><category term="code" /><category term="development" /><category term="programming" /><category term="Python" /><category term="Ruby" /><category term="C++" /><category term="Lua" /><category term="Perl" /><summary type="html">Synopsis After finishing the first half of the 2017 Advent of Code and implementing each solution in a different programming language, I decided to write down my experience with each of them.</summary></entry><entry><title type="html">Actionbound cheatsheet</title><link href="http://localhost:4000/2017/12/31/actionbound_cheatsheet.html" rel="alternate" type="text/html" title="Actionbound cheatsheet" /><published>2017-12-31T00:00:00+01:00</published><updated>2017-12-31T00:00:00+01:00</updated><id>http://localhost:4000/2017/12/31/actionbound_cheatsheet</id><content type="html" xml:base="http://localhost:4000/2017/12/31/actionbound_cheatsheet.html">&lt;h1 id=&quot;qr-codes&quot;&gt;QR Codes&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;generate them on the ActionBound website&lt;/li&gt;
   &lt;li&gt;export them as PNG&lt;/li&gt;
